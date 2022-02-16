@@ -49,9 +49,10 @@ console.log(uploads_path);
 app.use(express.static(uploads_path));
 
 //set template engine
+app.set("views", path.join(__dirname, "views")); // views being the name of the folder in the root dir
 app.set("view engine", "ejs");
 
-app.engine("ejs", require("ejs").__express);
+// app.engine("ejs", require("ejs").__express);
 
 //attach router
 const routes = require("../routes/routes");
